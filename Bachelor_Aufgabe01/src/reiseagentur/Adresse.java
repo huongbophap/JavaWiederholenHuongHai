@@ -27,7 +27,7 @@ public class Adresse {
 	}
 
 	public void setHausnummer(String hausnummer) {
-		hausnummer = hausnummer;
+		this.hausnummer = hausnummer;
 	}
 
 	public String getPlz() {
@@ -46,8 +46,16 @@ public class Adresse {
 		this.ort = ort;
 	}
 	
-	public void adresseAnzeigen() {
-		System.out.print(strasse + " " + hausnummer + ", " + plz + ", " + ort);
+
+	@Override
+	public String toString() {
+		return "Adresse [strasse=" + strasse + ", hausnummer=" + hausnummer + ", plz=" + plz + ", ort=" + ort + "]";
 	}
+
+	
+
+	
+	
+	
 
 }

@@ -1,26 +1,29 @@
 package reiseagentur;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Reiseagentur {
 	private String name;
 	private String ustIdNr;
 	private Adresse adresse; 
-	private Set<Kunde> kundenList;
+	private List<Kunde> kundenList;
 	
 	public Reiseagentur(String name, String ustIdNr, Adresse adresse) {
 		this.name = name;
 		this.ustIdNr = ustIdNr;
 		this.adresse = adresse;
-		this.kundenList = new HashSet<Kunde>();
+		this.kundenList = new ArrayList<Kunde>();
 	}
 
-	public Set<Kunde> getKundenList() {
+	public List<Kunde> getKundenList() {
 		return kundenList;
 	}
-
-	public void setKundenList(Set<Kunde> kundenList) {
+	// co the tao instance list oday hoac o Contructor
+	public void setKundenList(List<Kunde> kundenList) {
 		this.kundenList = kundenList;
 	}
 	
@@ -47,15 +50,17 @@ public class Reiseagentur {
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
-	
-	public void alleKundenAnzeigen() {
-		for (Kunde kunde : kundenList) {
-			kunde.stammdatenKundeAnzeigen();
-			System.out.print(". Adresse: ");
-			kunde.getAdresse().adresseAnzeigen();
-			System.out.println();
-		}
+
+	@Override
+	public String toString() {
+		return "Reiseagentur [name=" + name + ", ustIdNr=" + ustIdNr + ", adresse=" + adresse.toString() + ", kundenList="
+				+ kundenList + "]";
 	}
+
+	
+
+	
+
 	
 	
 }
